@@ -42,20 +42,13 @@ page {
 }
 
 /*按钮*/
-.authorizeBtn{
-  width: 70%;
-  margin-top: 25px;
-}
-
 .loginBtn {
     width: 70%;
-    margin-top: 15px;
+    margin-top: 35px;
     background-color: LawnGreen;
 }
 
-/** 添加自定义button点击态样式类**/
-
-.goRegistBtn {
-    width: 70%;
-    margin-top: 15px;
+.authorizeBtn{
+  width: 70%;
+  margin-top: 15px;
 }
