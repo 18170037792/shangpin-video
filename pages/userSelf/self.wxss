@@ -18,20 +18,25 @@ page {
 
 .info-items {
     margin-left: 30px;
+    color: white;
+    font-size: 15px
 }
 
 .face {
     width: 180rpx;
     height: 180rpx;
+    /*圆角样式*/
     border-radius: 50%;
+    margin-left: 1px;
     margin-top: 20px;
     background-color: whitesmoke
 }
 
 .nickname {
     margin-top: 5px;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 17px;
+    color: wheat
 }
 
 .logout {
@@ -76,4 +81,17 @@ page {
 .videoImage {
     width: 250rpx;
     height: 180px;
+}
+
+.info-works {
+  margin-left: 50px;
+  margin-top: 20px;
+  color: black;
+}
+
+.lin{
+  width: 90%;
+  height: 1px;
+  background-color:whitesmoke;
+  margin-top: 11px;
 }
