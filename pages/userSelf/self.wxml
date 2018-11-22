@@ -2,13 +2,17 @@
 
   <view class='container'>
 
-    <image src="../resource/images/faceImage.jpg" class="face" bindtap='changeFace'></image>
-    <label class='nickname'>白茶清欢无别事</label>
+    <image src="{{faceUrl}}" class="face" bindtap='changeFace'></image>
+    <label class='nickname'>{{nickname}}</label>
     <label class='lin'></label>
 
-    <label class=''>北国微风，不期而遇，且听风吟，爱随此行</label>
+    <label class=''>{{signature}}</label>
+    <button size='mini' bindtap=''>上传头像</button>
+    <button size='mini' bindtap='logout'>注销</button>
 
-    <button class='' bindtap='addInfomation'>+增加兴趣年龄</button>
+    <!--
+    <button class='' bindtap='addInfomation'></button>
+    -->
 
     <!--
     <button size='mini' class='primary' bindtap='uploadVideo'> 上传作品</button>
@@ -32,5 +36,3 @@
 </view>
 
 
-
-----------------------------------------------------

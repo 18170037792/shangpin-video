@@ -25,7 +25,7 @@
                 <button class="loginBtn"  form-type='submit'>账号登录</button>
             </view>
             <view>
-                <button class="authorizeBtn" type="primary" open-type='getUserInfo' bindgetuserinfo='doLogin'>立即使用</button>
+                <button class="authorizeBtn" type="primary" open-type='getUserInfo' bindgetuserinfo='doAuthLogin'>微信登录</button>
             </view>
         </form>
     </view>
