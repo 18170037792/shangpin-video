@@ -80,11 +80,17 @@ Page({
       var code = res.code;
       console.log(code);
       if (code){
+        wx.showLoading({
+          title: '请等待',
+        });
         //发送code给后端
         wx.request({
           url: serverUrl +'/weChat/mpLogin?code='+code,
           method: 'GET',
           success: function(result){
+            console.log(result.data)
+            app.userInfo = result.data.data;
+            wx.hideLoading();
             wx.navigateTo({
               url: '../userSelf/self'
             })
