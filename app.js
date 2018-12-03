@@ -2,6 +2,8 @@
 App({
   serverUrl: "http://192.168.2.66:8080",
 
+  wxUserInfo: null,
+
   userInfo: null
   
   // setGlobalCache:function(user){

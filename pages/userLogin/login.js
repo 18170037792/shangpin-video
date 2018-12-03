@@ -70,30 +70,51 @@ Page({
 
   //用户授权登录
   doAuthLogin: function(e){
-    console.log(e.detail.errMsg)
-    console.log(e.detail.userInfo)
-    console.log(e.detail.rawData)
+    //获取登录用户信息
+    var wxUser = e.detail.userInfo;
+    var nickName = wxUser.nickName;
+    var avatarUrl = wxUser.avatarUrl;
     var serverUrl = app.serverUrl;
+    wx.showLoading({
+      title: '请稍等',
+    })
     wx.login({
       success: function (res) {
+      wx.hideLoading();
       //获取登录的临时凭证code,只存在五分钟
-      var code = res.code;
-      console.log(code);
+      var code = res.code;  
       if (code){
-        wx.showLoading({
-          title: '请等待',
-        });
         //发送code给后端
         wx.request({
           url: serverUrl +'/weChat/mpLogin?code='+code,
-          method: 'GET',
+          method: 'POST',
+          data:{
+            nickname: nickName,
+            faceImage: avatarUrl,
+          },
           success: function(result){
-            console.log(result.data)
-            app.userInfo = result.data.data;
-            wx.hideLoading();
-            wx.navigateTo({
-              url: '../userSelf/self'
-            })
+            var status = result.data.code;
+            if(status == 200){
+              //消息提示
+              wx.showToast({
+                title: '登录成功',
+                icon: 'success',
+                duration: 2000
+              }),
+              app.userInfo = result.data.data;
+              
+              console.log(app.userInfo)
+              wx.navigateTo({
+                url: '../userSelf/self',
+              })
+            }else if(status == 400){
+              wx.showToast({
+                title: result.data.msg,
+                mask: true,
+                icon: 'none',
+                duration: 2000
+              })
+            }
           }
         })
       }else{
@@ -106,6 +127,6 @@ Page({
       }
     }
   });
- }
+ },
 
 })
