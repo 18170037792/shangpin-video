@@ -95,3 +95,18 @@ page {
   background-color:whitesmoke;
   margin-top: 11px;
 }
+
+.personalSignature{
+  color: #F0FFF0;
+  text-align: center;
+  font-size: 13px;
+  width: 90%;
+  margin-top: 10px
+}
+
+#addInfomation{
+  color: #F0F0F0; 
+  border-color: #BEBEBE;
+  margin: 15px 15px 15px 10px;
+  font-size: 12px;
+}

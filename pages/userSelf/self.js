@@ -17,7 +17,7 @@ Page({
     wx.showLoading({
       title: '请稍后',
     });
-    //调用后端
+    //调用后端,获取个人资料
     wx.request({
       url: serverUrl + '/user/userPersonal?userId=' + user.id,
       method: 'GET',
@@ -39,20 +39,26 @@ Page({
               });
             }
           }else{
-            if (userInfo.faceImage != null 
+            if (userInfo.faceImage != null  
               && userInfo.faceImage != '' && userInfo.faceImage != undefined){
               me.setData({
                 faceUrl: serverUrl + userInfo.faceImage
               });
-          }
-
+            }
           }
           
           me.setData({
+            userId: userInfo.userId,
             fansCounts: userInfo.fansCounts,
             followCounts: userInfo.followCounts,
             receiveLikeCounts: userInfo.receiveLikeCounts,
-            nickname: userInfo.nickname
+            nickname: userInfo.nickname,
+            signature: userInfo.signature,
+            school: userInfo.school,
+            gender: userInfo.gender,
+            birthday: userInfo.birthday,
+            place: userInfo.place,
+            email: userInfo.email
           });
           
         }else if(status == 400){
@@ -65,7 +71,19 @@ Page({
       }
     })
 
+    app.personal = me.data;
+    // /**将参数传递给下一个页面*/
+    //this.addInfomation(me.data);
   },
+
+  /**编辑个人资料*/
+  addInfomation: function () {
+    wx.navigateTo({
+      url: '../personal/personal',
+    })
+  },
+
+  
 
   /**上传头像*/
   changeFace: function(){
@@ -122,7 +140,7 @@ Page({
           } else if (user.openId != null
             && user.openId != '' && user.openId != undefined){
             wx.showToast({
-              title: '微信登录不能更换头像!',
+              title: '微信用户不能更换头像!',
               icon: 'none',
               duration: 2000,
               mask: true,

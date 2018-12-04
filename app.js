@@ -4,7 +4,9 @@ App({
 
   wxUserInfo: null,
 
-  userInfo: null
+  userInfo: null,
+
+  personal: null
   
   // setGlobalCache:function(user){
   //   wx.setStorage("userInfo", user);

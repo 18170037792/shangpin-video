@@ -1,0 +1,42 @@
+
+<view class='container'>
+
+    <image src="https://wx.qlogo.cn/mmopen/vi_32/Dib3LnwhqEL3nbcmHKKtzowPiacl1richmt4K6RxjzB1szljwcpuUL0smfSvXxxHTogEIJpBZ3xAC29IXlyy1iczKQ/132" class="face" bindtap='changeFace'></image>
+    <label class='prompt'>点击上传头像</label>
+    <label class='lin'></label>
+
+    <view>
+    <label>
+    </label>
+    </view>
+  </view>
+
+
+<view class='content'>
+  <view class='nav'>
+    <view class='prompt'> 
+    </view>
+  </view>
+    <view class='item'>
+      <text class='left'>签名</text><text class='right'>{{signature}}</text>
+    </view>
+    <view class='item'>
+      <text class='left'>学校</text><text class='right'>{{school}}</text>
+    </view>
+    <view class='item'>
+     <text class='left'>性别</text><text class='right'>男</text>
+    </view>
+    <view class='item'>
+      <text class='left'>生日</text><text class='right'>1995-03-16</text>
+    </view>
+    <view class='item'>
+      <text class='left'>地区</text><text class='right'>{{place}}</text>
+    </view>
+    <view class='item' bindtap='setemail'>
+     <text class='left'> 邮箱</text><text class='right' wx:if="{{email==''|| email==null}}">1071367833@qq.com</text><text class='right' wx:else>{{email}}</text>
+    </view>
+    <view class='item' bindtap='exit'>
+      <text class='left'>退出</text><text class='right'>>>></text>
+    </view>
+  
+</view>

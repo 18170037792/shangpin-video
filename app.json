@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/userLogin/login",
+    "pages/personal/personal",
     "pages/index/index",
     "pages/userSelf/self",
     "pages/userRegist/regist"

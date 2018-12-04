@@ -1,0 +1,59 @@
+/*背景页面样式*/
+page {
+    font-size: 16px;
+}
+
+.container {
+    background-color: #76b18cbd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* pages/myinfo/myinfo.wxss */
+.nav{
+    background-color: #fff;
+}
+.top{
+  width: 250rpx;
+  height: 250rpx;
+  margin: 0 auto;
+}
+.prompt{
+ color: #F0F0F0;
+ font-size: 13px;
+ text-align: center;
+}
+.item{
+  height: 70rpx;
+  background-color: #fff;
+  margin-top: 20px;
+  display: flex;
+}
+.left{
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+.right{
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  color: rgb(59, 56, 56);
+  margin-right: 15px;
+}
+
+
+
+
+.face {
+    width: 180rpx;
+    height: 180rpx;
+    /*圆角样式*/
+    border-radius: 50%;
+    align-content: center;
+    margin-left: 1px;
+    margin-top: 20px;
+    background-color: whitesmoke
+}
